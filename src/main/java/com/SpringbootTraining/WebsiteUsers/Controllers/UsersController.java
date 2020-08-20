@@ -13,14 +13,16 @@ public class UsersController {
     @Autowired
     WebUsersRepository webUsersRepository;
 
+    //Creating Get method to fetch users from database
     @GetMapping(value = "/restful/users")
     public List<Users> getALL() {
         return webUsersRepository.findAll();
-
+    
     }
 
+    //Creating Post method
     @PostMapping(value = "/restful/post")
-    public List<Users> Persist(@RequestBody final Users users) {
+    public List<Users> Persist(@RequestBody Users users) {
         webUsersRepository.save(users);
          return webUsersRepository.findAll();
 
