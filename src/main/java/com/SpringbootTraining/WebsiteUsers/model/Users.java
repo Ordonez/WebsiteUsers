@@ -3,10 +3,11 @@ package com.SpringbootTraining.WebsiteUsers.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users_table")
+@Table(name = "users_table")  //mysql DB table name 
 
 public class Users {
 
+    //id will be auto generated
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
@@ -16,6 +17,8 @@ public class Users {
     private String name;
     @Column(name= "email")
     private String email;
+
+    //getters and setters
 
     public int getId() {
         return id;
@@ -43,6 +46,6 @@ public class Users {
 
     public Users() {
 
-
+    
     }
 }
